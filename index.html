@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akinmade Ayomide | Premium Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f6f8fa] text-zinc-800 dark:bg-[#02040a] dark:text-zinc-200 antialiased selection:bg-indigo-500/20 dark:selection:bg-indigo-500/30 relative min-h-screen overflow-x-hidden">
+
+    <canvas id="interactive-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-40 dark:opacity-30"></canvas>
+
+    <div class="fixed top-6 right-6 z-50">
+        <button onclick="toggleTheme()" class="p-3 rounded-full bg-white/70 dark:bg-zinc-900/70 border border-zinc-200/60 dark:border-zinc-800/60 backdrop-blur-xl shadow-xl text-zinc-800 dark:text-zinc-200 hover:scale-110 active:scale-95 transition-all duration-300 group" aria-label="Toggle Theme">
+            <svg class="w-5 h-5 hidden dark:block group-hover:rotate-90 transition-transform duration-500 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14.5 12a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden group-hover:-rotate-45 transition-transform duration-500 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="absolute top-0 inset-x-0 h-[650px] z-0 opacity-[0.07] dark:opacity-[0.03] pointer-events-none mix-blend-luminosity">
+        <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1600&q=80" alt="Code lines background" class="w-full h-full object-cover">
+    </div>
+
+    <div class="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 dark:from-indigo-600/5 dark:to-purple-600/5 blur-[140px] pointer-events-none animate-orb-1"></div>
+    <div class="absolute top-[40%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/10 to-pink-500/10 dark:from-purple-600/5 dark:to-pink-600/5 blur-[140px] pointer-events-none animate-orb-2"></div>
+
+    <div class="max-w-3xl mx-auto px-6 py-24 sm:py-36 relative z-10">
+        
+        <header class="mb-24 relative scroll-animate">
+            <h1 class="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl mb-5 group cursor-default">
+                Akinmade Ayomide
+            </h1>
+            
+            <div class="h-8 mb-6 flex items-center">
+                <p id="typing-text" class="text-xl font-bold mono-font bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent typing-cursor pr-1 inline-block">
+                </p>
+            </div>
+
+            <p class="text-[17px] text-zinc-600 dark:text-zinc-300 font-normal leading-relaxed max-w-xl">
+                I build beautiful, fast, and modern websites. Whether you are an individual, a small business, or a company, I create clean digital solutions that just work.
+            </p>
+        </header>
+
+        <section class="mb-24 scroll-animate">
+            <h2 class="text-xs font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase mb-6">Verified Core Architecture</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-indigo-500/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Structure</span>
+                    <span class="text-xs font-semibold mono-font text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">HTML5</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-blue-400/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Styling Layer</span>
+                    <span class="text-xs font-semibold mono-font text-blue-500 dark:text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">CSS3</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-cyan-400/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">UI Framework</span>
+                    <span class="text-xs font-semibold mono-font text-cyan-600 dark:text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded">React</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-purple-500/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Script Logic</span>
+                    <span class="text-xs font-semibold mono-font text-purple-600 dark:text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">JavaScript</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-indigo-500/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Design Core</span>
+                    <span class="text-xs font-semibold mono-font text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">Tailwind</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-green-500/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Backend Run</span>
+                    <span class="text-xs font-semibold mono-font text-green-600 dark:text-green-400 bg-green-500/10 px-2 py-0.5 rounded">Node.js</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-emerald-500/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Repositories</span>
+                    <span class="text-xs font-semibold mono-font text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Git Engine</span>
+                </div>
+                <div class="p-4 rounded-xl bg-white/40 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/80 backdrop-blur-md flex items-center justify-between group hover:border-purple-500/50 transition-all duration-300">
+                    <span class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Adaptability</span>
+                    <span class="text-xs font-semibold mono-font text-purple-600 dark:text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Responsive</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24 scroll-animate">
+            <h2 class="text-xs font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase mb-6">Who I Work With</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5
+                <div class="tilt-card group overflow-hidden rounded-2xl bg-white border border-zinc-200 dark:bg-zinc-900/40 dark:border-zinc-800 backdrop-blur-md shadow-sm glass-shine transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm mb-4">01</div>
+                        <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-2">Individuals</h3>
+                        <p class="text-sm text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">Personal websites and portfolios to showcase your profile.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&h=180&q=80" alt="Workspace" class="w-full h-24 object-cover opacity-100 dark:opacity-75 transition-all duration-300 group-hover:scale-105">
+                </div>
+
+                <div class="tilt-card group overflow-hidden rounded-2xl bg-white border border-zinc-200 dark:bg-zinc-900/40 dark:border-zinc-800 backdrop-blur-md shadow-sm glass-shine transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-8 h-8 rounded-lg bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-sm mb-4">02</div>
+                        <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-2">Businesses</h3>
+                        <p class="text-sm text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">Custom landing pages designed to get you more clients.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=180&q=80" alt="Analytics data" class="w-full h-24 object-cover opacity-100 dark:opacity-75 transition-all duration-300 group-hover:scale-105">
+                </div>
+
+                <div class="tilt-card group overflow-hidden rounded-2xl bg-white border border-zinc-200 dark:bg-zinc-900/40 dark:border-zinc-800 backdrop-blur-md shadow-sm glass-shine transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm mb-4">03</div>
+                        <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-2">Companies</h3>
+                        <p class="text-sm text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">Clean code and web development for business platforms.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&h=180&q=80" alt="Team system" class="w-full h-24 object-cover opacity-100 dark:opacity-75 transition-all duration-300 group-hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24 scroll-animate">
+            <h2 class="text-xs font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase mb-6">Website Setup Options</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="tilt-card group bg-white dark:bg-zinc-900/20 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 backdrop-blur-md shadow-sm flex flex-col justify-between glass-shine transition-all duration-500 hover:border-zinc-400 dark:hover:border-zinc-600 relative overflow-hidden">
+                    <div class="absolute bottom-0 right-0 w-36 h-36 opacity-30 dark:opacity-15 pointer-events-none group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=200&h=200&q=80" alt="Code block" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Starter Package</h3>
+                            <span class="text-xs font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 px-3 py-1 rounded-full border border-indigo-100 dark:border-indigo-900/40">Free Hosting</span>
+                        </div>
+                        <p class="text-sm text-zinc-500 dark:text-zinc-400 font-normal mb-8">Great for a simple start with no monthly platform fees.</p>
+                        <ul class="space-y-4 text-sm text-zinc-600 dark:text-zinc-300 font-light border-t border-zinc-100 dark:border-zinc-800/60 pt-6 mb-8 relative z-10">
+                            <li class="flex items-center gap-2.5"><span class="text-emerald-500 dark:text-emerald-400 font-bold">✓</span> Free domain hosting setup</li>
+                            <li class="flex items-center gap-2.5"><span class="text-emerald-500 dark:text-emerald-400 font-bold">✓</span> Fully mobile-responsive layout</li>
+                            <li class="flex items-center gap-2.5"><span class="text-emerald-500 dark:text-emerald-400 font-bold">✓</span> Modern and responsive design</li>
+                            <li class="flex items-center gap-2.5"><span class="text-emerald-500 dark:text-emerald-400 font-bold">✓</span> Direct contact button integration</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/2349139101405?text=Hi%20Akinmade,%20I%20want%20to%20know%20more%20about%20your%20Starter%20Package." target="_blank" class="block text-center text-sm font-semibold bg-zinc-900 text-white dark:bg-zinc-800 dark:hover:bg-zinc-700 py-3.5 rounded-xl hover:bg-zinc-800 transition-all duration-300 shadow-sm hover:scale-[1.02] active:scale-95 relative z-10">Choose Starter</a>
+                </div>
+
+                <div class="tilt-card group bg-white dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-700 rounded-2xl p-8 shadow-md flex flex-col justify-between glass-shine transition-all duration-500 hover:border-indigo-500 relative overflow-hidden">
+                    <div class="absolute bottom-0 right-0 w-36 h-36 opacity-30 dark:opacity-15 pointer-events-none group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=200&h=200&q=80" alt="Laptop screen" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-full blur-xl"></div>
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Premium Package</h3>
+                            <span class="text-xs font-bold bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 px-3 py-1 rounded-full border border-zinc-800 dark:border-zinc-200">Custom Domain</span>
+                        </div>
+                        <p class="text-sm text-zinc-500 dark:text-zinc-400 font-normal mb-8">For businesses looking for a custom .com address and professional branding.</p>
+                        <ul class="space-y-4 text-sm text-zinc-600 dark:text-zinc-300 font-light border-t border-zinc-100 dark:border-zinc-800/60 pt-6 mb-8 relative z-10">
+                            <li class="flex items-center gap-2.5"><span class="text-indigo-600 dark:text-indigo-400 font-bold">✓</span> Custom domain registration (.com, .net)</li>
+                            <li class="flex items-center gap-2.5"><span class="text-indigo-600 dark:text-indigo-400 font-bold">✓</span> Custom professional email address</li>
+                            <li class="flex items-center gap-2.5"><span class="text-indigo-600 dark:text-indigo-400 font-bold">✓</span> Full design setup & delivery</li>
+                            <li class="flex items-center gap-2.5"><span class="text-indigo-600 dark:text-indigo-400 font-bold">✓</span> Search engine friendly setup (SEO)</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/2349139101405?text=Hi%20Akinmade,%20I%20want%20to%20know%20more%20about%20your%20Premium%20Package." target="_blank" class="block text-center text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3.5 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-md shadow-indigo-200 dark:shadow-none hover:scale-[1.02] active:scale-95 relative z-10">Choose Premium</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-24 scroll-animate">
+            <h2 class="text-xs font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase mb-6">Verified Client Stories</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="p-6 rounded-2xl bg-white border border-zinc-200 dark:bg-zinc-900/30 dark:border-zinc-800 backdrop-blur-md shadow-sm flex flex-col justify-between">
+                    <p class="text-sm text-zinc-600 dark:text-zinc-300 font-light italic leading-relaxed mb-6">
+                        "Akinmade delivered our custom landing page in record time. Our conversion rate increased by 25% within the first month. Incredibly fast and easy to communicate with!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white text-xs font-bold">SJ</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-zinc-900 dark:text-white">Sarah Jenkins</h4>
+                            <p class="text-xs text-zinc-400 dark:text-zinc-500">E-commerce Founder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white border border-zinc-200 dark:bg-zinc-900/30 dark:border-zinc-800 backdrop-blur-md shadow-sm flex flex-col justify-between">
+                    <p class="text-sm text-zinc-600 dark:text-zinc-300 font-light italic leading-relaxed mb-6">
+                        "Extremely professional. He took our rough brand concepts and designed a responsive interface that functions flawlessly. Highly recommended for premium site builds."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 flex items-center justify-center text-white text-xs font-bold">DO</div>
+                        <div>
+                        <h4 class="text-sm font-bold text-zinc-900 dark:text-white">David Okafor</h4>
+                            <p class="text-xs text-zinc-400 dark:text-zinc-500">Tech Consultant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24 scroll-animate">
+            <h2 class="text-xs font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-3.5">
+                
+                <div class="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/10 rounded-xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleAccordion(1)" class="w-full p-5 flex items-center justify-between text-left font-semibold text-sm text-zinc-900 dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors">
+                        <span>How long does it take to complete a website?</span>
+                        <svg id="faq-icon-1" class="w-4 h-4 text-zinc-400 dark:text-zinc-500 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-1" class="faq-collapse max-h-0 opacity-0 overflow-hidden bg-zinc-50/50 dark:bg-zinc-900/20">
+                        <p class="p-5 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light border-t border-zinc-100 dark:border-zinc-800/50">
+                            Starter packages usually take 3 to 5 business days, while Premium packages with custom logic or custom setups take around 7 to 10 days depending on your structural requirements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/10 rounded-xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleAccordion(2)" class="w-full p-5 flex items-center justify-between text-left font-semibold text-sm text-zinc-900 dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors">
+                        <span>Do I need to purchase hosting or domains first?</span>
+                        <svg id="faq-icon-2" class="w-4 h-4 text-zinc-400 dark:text-zinc-500 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-2" class="faq-collapse max-h-0 opacity-0 overflow-hidden bg-zinc-50/50 dark:bg-zinc-900/20">
+                        <p class="p-5 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light border-t border-zinc-100 dark:border-zinc-800/50">
+                            No preparation is required. If you choose the Premium Package, I will purchase and register the domain (.com, .net, etc.) and orchestrate the live setup for you. For the Starter option, I handle the free configuration automatically.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/10 rounded-xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleAccordion(3)" class="w-full p-5 flex items-center justify-between text-left font-semibold text-sm text-zinc-900 dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors">
+                        <span>Will my website perform properly on mobile devices?</span>
+                        <svg id="faq-icon-3" class="w-4 h-4 text-zinc-400 dark:text-zinc-500 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-3" class="faq-collapse max-h-0 opacity-0 overflow-hidden bg-zinc-50/50 dark:bg-zinc-900/20">
+                        <p class="p-5 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light border-t border-zinc-100 dark:border-zinc-800/50">
+                            Absolutely. Every layout structure is programmed to be 100% responsive, load lightning fast, and render cleanly across all modern smartphones, tablets, laptops, and desktop screens.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact-panel" class="animate-indigo-light dark:bg-zinc-900/90 border border-indigo-200 dark:border-indigo-500/30 rounded-3xl p-8 sm:p-12 text-center shadow-xl transition-all duration-700 scroll-animate">
+            <h2 class="text-3xl font-extrabold text-indigo-950 dark:text-indigo-400 mb-3">Let’s work together</h2>
+            <p class="text-[15px] text-indigo-900 dark:text-zinc-300 font-normal max-w-sm mx-auto mb-8 leading-relaxed">
+                Have a project or a business idea? Reach out directly across any platform or drop an instant message below.
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+                <div class="magnetic-wrapper">
+                    <a href="https://wa.me/2349139101405?text=Hi%20Akinmade,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20chat!" 
+                       target="_blank" 
+                       class="magnetic-target text-xs font-bold px-5 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition-all flex items-center gap-2 shadow-sm">
+                        WhatsApp
+                    </a>
+                </div>
+                <div class="magnetic-wrapper">
+                    <a href="https://tiktok.com/@mose47850" 
+                       target="_blank" 
+                       class="magnetic-target text-xs font-bold px-5 py-3 rounded-xl bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-950 hover:opacity-90 transition-all flex items-center gap-2 shadow-sm">
+                        TikTok
+                    </a>
+                </div>
+                <div class="magnetic-wrapper">
+                    <a href="https://www.facebook.com/profile.php?id=61584730321011" 
+                       target="_blank" 
+                       class="magnetic-target text-xs font-bold px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-all flex items-center gap-2 shadow-sm">
+                        Facebook
+                    </a>
+                </div>
+            </div>
+
+            <div class="max-w-md mx-auto bg-white/60 dark:bg-zinc-950/40 p-6 rounded-2xl border border-zinc-200/60 dark:border-zinc-800 backdrop-blur-xl">
+                <form action="https://formspree.io/f/meebrdaq" method="post" class="flex flex-col gap-3">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:border-indigo-500 text-zinc-800 dark:text-zinc-100 transition-colors">
+                    <input type="email" name="email" placeholder="Your Email Address" required class="w-full px-4 py-3 text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:border-indigo-500 text-zinc-800 dark:text-zinc-100 transition-colors">
+                    <textarea name="message" placeholder="Project Description..." required rows="3" class="w-full px-4 py-3 text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:border-indigo-500 text-zinc-800 dark:text-zinc-100 transition-colors resize-none"></textarea>
+                    <button type="submit" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-xl shadow-md transition-all duration-300">Send A Mail</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="mt-24 pt-6 border-t border-zinc-200 dark:border-zinc-800 text-sm text-zinc-400 dark:mb-24 scroll--zinc-500 flex justify-between items-center">
+            <p>© 2026 Akinmade Ayomide</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
